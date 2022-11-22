@@ -15,6 +15,8 @@ subscription_id = os.getenv("AZURE_SUBSCRIPTION_ID")
 resource_group = os.getenv("AZURE_RESOURCE_GROUP")
 workspace = os.getenv("AZURE_ML_WORKSPACE")
 training_cluster = os.getenv("AZURE_ML_TRAINING_CLUSTER")
+registered_model_name = os.getenv("MODEL_NAME")
+registered_model_version = os.getenv("MODEL_VERSION")
 
 ml_client = MLClient(DefaultAzureCredential(), subscription_id, resource_group, workspace)
 
@@ -29,9 +31,8 @@ except Exception:
     ml_client.compute.begin_create_or_update(compute).result()
 
 # train the model if not already registered
-registered_model_name = "iristutorialmodel"
 try:
-    registered_model = ml_client.models.get(registered_model_name, version="2")
+    registered_model = ml_client.models.get(registered_model_name, version=registered_model_version)
 except Exception:
     print ("Model is not registered, training a new one...")
     command_job = command(
