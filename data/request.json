@@ -1,0 +1,9 @@
+{
+  "input_data": {
+    "columns": ["sepal_length","sepal_width","petal_length","petal_width"],
+    "data": [
+            [2,2,1,2],
+            [4,9,8,7]
+        ]
+  }
+}

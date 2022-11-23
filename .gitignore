@@ -127,3 +127,10 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# venv
+*_env
+
+# downloaded model folder
+model/
+!model/conda.yaml
