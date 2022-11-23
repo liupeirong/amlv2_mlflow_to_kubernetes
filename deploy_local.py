@@ -62,10 +62,10 @@ except LocalEndpointNotFoundError:
     ml_client.online_deployments.begin_create_or_update(local_deployment, local=True)
 
 # validate inference result
-print("Creating default deployment. Check the status in the Azure portal.")
+print("Validate inferencing results on the local endpoint...")
 result = ml_client.online_endpoints.invoke(
    endpoint_name=online_endpoint_name,
-   request_file='./data/request-local.json',
+   request_file='./data/request-unmanaged.json',
    local=True)
 
 print(result)

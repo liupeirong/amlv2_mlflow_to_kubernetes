@@ -92,7 +92,7 @@ except Exception:
     deployment = ml_client.online_deployments.begin_create_or_update(managed_deployment).result()
 
 # test the blue deployment with some sample data
-print("Run inferencing on managed endpoint...")
+print("Validate inferencing results on managed endpoint...")
 result = ml_client.online_endpoints.invoke(
    endpoint_name=online_endpoint_name,
    deployment_name=deployment_name,
