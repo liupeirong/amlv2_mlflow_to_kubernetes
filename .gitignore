@@ -130,3 +130,7 @@ dmypy.json
 
 # venv
 *_env
+
+# downloaded model folder
+model/
+!model/conda.yaml
